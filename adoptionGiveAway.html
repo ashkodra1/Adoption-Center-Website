@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pet Adoption Center</title>
+    <link rel="stylesheet" href="adoptionCenterStyle.css" />
+    <style>
+      form {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri;
+        line-height: 1.5;
+      }
+      form input[type="radio"] {
+        accent-color: #363f49;
+        cursor: pointer;
+      }
+      form select {
+        background-color: #363f49;
+        color: #f7f9f8;
+        border-radius: 10px;
+      }
+      form input[type="submit"] {
+        background-color: #363f49;
+        color: #f7f9f8;
+        border-radius: 10px;
+      }
+      .prompt {
+        font-size: 18px;
+        padding-right: 10px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="adoptionHomePage.html">
+          <img
+            class="logo-img"
+            src="logo.png"
+            alt="Adoption Center logo"
+            width="128"
+            height="79"
+          />
+        </a>
+        <h1>Pet Adoption Center</h1>
+      </div>
+
+      <!-- The image is taken from the following website : https://pixabay.com/vectors/dog-cat-domestic-animal-silhouette-1532627/ -->
+    </header>
+    <div class="container">
+      <main class="main-page">
+        <aside>
+          <ul class="menu">
+            <li class="home">
+              <a href="adoptionHomePage.html"> Home page </a>
+            </li>
+            <li class="available">
+              <a href="adoptionAvailablePets.html">Browse Available Pets</a>
+            </li>
+
+            <li class="find">
+              <a href="adoptionFindPet.html">Find a dog/cat</a>
+            </li>
+            <li class="dog_care">
+              <a href="adoptionDogCare.html">Dog Care</a>
+            </li>
+
+            <li class="cat_care">
+              <a href="adoptionCatCare.html">Cat Care </a>
+            </li>
+            <li class="giveaway" style="background-color: lightslategray">
+              <a href="adoptionGiveAway.html" style="color: #f7f9f8">
+                Have a pet to give away
+              </a>
+            </li>
+            <li class="contact">
+              <a href="adoptionContact.html">Contact Us</a>
+            </li>
+          </ul>
+        </aside>
+        <section>
+          <h2>Please fill out the following form</h2>
+
+          <form action="action-giveaway.js">
+            <label class="prompt">
+              What animal would you like to give away :
+            </label>
+            <label for="cat">
+              <input type="radio" name="animal" id="cat" value="cat" />
+              Cat
+            </label>
+            <label for="dog">
+              <input type="radio" name="animal" id="dog" value="dog" />
+              Dog
+            </label>
+            <br />
+            <br />
+            <label class="prompt">What breed is the animal : </label>
+            <select name="breed" id="breed">
+              <option value="mix">Mix breed</option>
+              <option value="siamese">Siamese Cat</option>
+              <option value="maine-coon">Maine Coone cat</option>
+              <option value="persian">Persian cat</option>
+              <option value="british-shorthair">British Shorthair cat</option>
+              <option value="ragdoll">Ragdoll cat</option>
+              <option value="golden">Golden Retriever dog</option>
+              <option value="german-shepherd">German Shepherd dog</option>
+              <option value="labrador">Labrador Retriever dog</option>
+              <option value="bulldog">French Bulldog</option>
+            </select>
+            <br />
+            <br />
+            <label class="prompt">How old is the animal : </label>
+            <select name="age" id="age">
+              <option value="baby">0 to 6 months</option>
+              <option value="junior">7 months to 2 years</option>
+              <option value="adult">3 to 6 years</option>
+              <option value="mature">7 to 10 years</option>
+              <option value="senior">11 to 14 years</option>
+              <option value="geriatric">15 years and older</option>
+            </select>
+            <br />
+            <br />
+            <label class="prompt"> What gender is the animal : </label>
+            <label for="male">
+              <input type="radio" name="gender" id="male" value="male" />
+              Male
+            </label>
+            <label for="female">
+              <input type="radio" name="gender" id="female" value="female" />
+              Female
+            </label>
+            <br />
+            <br />
+            <label class="prompt">
+              Does the animal get along with other dogs :
+            </label>
+            <label for="along-dog-yes">
+              <input
+                type="radio"
+                name="along-dog"
+                id="along-dog-yes"
+                value="yes"
+              />
+              Yes
+            </label>
+            <label for="along-dog-no">
+              <input
+                type="radio"
+                name="along-dog"
+                id="along-dog-no"
+                value="no"
+              />
+              No
+            </label>
+            <br />
+            <br />
+            <label class="prompt">
+              Does the animal get along with other cats :
+            </label>
+            <label for="along-cat-yes">
+              <input
+                type="radio"
+                name="along-cat"
+                id="along-cat-yes"
+                value="yes"
+              />
+              Yes
+            </label>
+            <label for="along-cat-no">
+              <input
+                type="radio"
+                name="along-cat"
+                id="along-cat-no"
+                value="no"
+              />
+              No
+            </label>
+            <br />
+            <br />
+            <label class="prompt">
+              Is the animal suitable for a family with small children :
+            </label>
+            <label for="along-children-yes">
+              <input
+                type="radio"
+                name="along-children"
+                id="along-children-yes"
+                value="yes"
+              />
+              Yes
+            </label>
+            <label for="along-children-no">
+              <input
+                type="radio"
+                name="along-children"
+                id="along-children-no"
+                value="no"
+              />
+              No
+            </label>
+            <br />
+            <br />
+            <label class="prompt">
+              Anything else we should know about the animal :
+            </label>
+            <br />
+            <label for="comments-area">
+              <textarea
+                name="comments-area"
+                id="comments-area"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </label>
+            <br />
+            <label class="prompt">The current owner's full name :</label>
+            <label for="name">
+              <input type="text" name="name" id="name" />
+            </label>
+            <br />
+            <br />
+            <label class="prompt">The current owner's email :</label>
+            <label for="email">
+              <input type="email" id="email" />
+            </label>
+            <br />
+            <br />
+            <input type="submit" value="Submit" />
+            <input type="submit" value="Clear" />
+          </form>
+        </section>
+      </main>
+      <a href="adoptionPrivacy.html">
+        <footer>
+          <h3>Privacy/Disclaimer Statement</h3>
+        </footer>
+      </a>
+    </div>
+  </body>
+</html>
