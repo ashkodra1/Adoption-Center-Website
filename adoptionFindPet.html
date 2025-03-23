@@ -32,19 +32,27 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="adoptionHomePage.html">
-          <img
-            class="logo-img"
-            src="logo.png"
-            alt="Adoption Center logo"
-            width="128"
-            height="79"
-          />
-        </a>
-        <h1>Pet Adoption Center</h1>
+      <div class="logo_container">
+        <table class="">
+          <tr>
+            <td>
+              <a href="adoptionHomePage.html">
+                <img
+                  class="logo-img"
+                  src="logo.png"
+                  alt="Adoption Center logo"
+                  width="128"
+                  height="79"
+                />
+              </a>
+            </td>
+            <td><h1>Pet Adoption Center</h1></td>
+          </tr>
+          <tr>
+            <td colspan="2"><h3 id="date"></h3></td>
+          </tr>
+        </table>
       </div>
-
       <!-- The image is taken from the following website : https://pixabay.com/vectors/dog-cat-domestic-animal-silhouette-1532627/ -->
     </header>
     <div class="container">
@@ -79,8 +87,10 @@
           </ul>
         </aside>
         <section>
+          <script src="script.js"></script>
+
           <!-- Find a dog/cat page -->
-          <form action="action-find.js">
+          <form name="findPetForm" onsubmit="return validation_findPet()">
             <h2>
               Please fill out the following form to find a pet fit for your
               needs and your requests:
@@ -98,7 +108,9 @@
             <br />
             <label class="prompt">Preferred Breed: </label>
             <select name="breed" id="breed">
-              <option value="no-preference">No Preference</option>
+              <option value="no-preference" selected="selected">
+                No Preference
+              </option>
               <option value="siamese">Siamese Cat</option>
               <option value="maine-coon">Maine Coone cat</option>
               <option value="persian">Persian cat</option>
@@ -113,7 +125,9 @@
             <br />
             <label class="prompt">Preferred Age: </label>
             <select name="age" id="age">
-              <option value="no-preference">No Preference</option>
+              <option value="no-preference" selected="selected">
+                No Preference
+              </option>
               <option value="baby">0 to 6 months</option>
               <option value="junior">7 months to 2 years</option>
               <option value="adult">3 to 6 years</option>

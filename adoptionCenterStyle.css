@@ -6,30 +6,44 @@ body {
 }
 
 /* For the header */
-.logo {
+.logo_container {
   /* The header */
   background-color: rgb(48, 91, 125);
-  text-align: center;
   padding: 15px;
   height: auto;
 }
 
+.logo_container table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .logo-img {
   /* The image/logo in the header */
-  height: 9%;
-  width: 15%;
+
   background-color: #f7f9f8;
   padding: 10px;
   border-radius: 20px;
 }
-.logo h1 {
+
+.logo_container h1 {
   /* The text/name */
   font-size: 50px;
-  display: inline;
-  margin: auto 30px;
-  line-height: 51px;
-  vertical-align: top;
+  margin: 30px;
   color: #f7f9f8;
+}
+
+#date {
+  color: #f7f9f8;
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 175px;
+  border-radius: 100px;
+  background-color: rgb(42, 81, 110);
 }
 
 .main-page {
@@ -84,6 +98,27 @@ section {
   grid-area: content;
   padding: 20px;
   background-color: #f7f9f8;
+}
+
+/* For Browse available pets */
+#content_Pets .content_info {
+  background-color: lightsteelblue;
+  margin: 25px;
+  padding: 15px;
+}
+#content_Pets caption {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+#content_Pets .content_input {
+  text-align: right;
+  margin-top: 5px;
+}
+#content_Pets input {
+  background-color: #363f49;
+  color: #f7f9f8;
+  border-radius: 10px;
 }
 
 /* For the footer */

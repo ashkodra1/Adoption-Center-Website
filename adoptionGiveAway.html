@@ -32,19 +32,27 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="adoptionHomePage.html">
-          <img
-            class="logo-img"
-            src="logo.png"
-            alt="Adoption Center logo"
-            width="128"
-            height="79"
-          />
-        </a>
-        <h1>Pet Adoption Center</h1>
+      <div class="logo_container">
+        <table class="">
+          <tr>
+            <td>
+              <a href="adoptionHomePage.html">
+                <img
+                  class="logo-img"
+                  src="logo.png"
+                  alt="Adoption Center logo"
+                  width="128"
+                  height="79"
+                />
+              </a>
+            </td>
+            <td><h1>Pet Adoption Center</h1></td>
+          </tr>
+          <tr>
+            <td colspan="2"><h3 id="date"></h3></td>
+          </tr>
+        </table>
       </div>
-
       <!-- The image is taken from the following website : https://pixabay.com/vectors/dog-cat-domestic-animal-silhouette-1532627/ -->
     </header>
     <div class="container">
@@ -81,7 +89,7 @@
         <section>
           <h2>Please fill out the following form</h2>
 
-          <form action="action-giveaway.js">
+          <form name="giveawayPet" onsubmit="return validation_GiveawayPet()">
             <label class="prompt">
               What animal would you like to give away :
             </label>
@@ -97,7 +105,7 @@
             <br />
             <label class="prompt">What breed is the animal : </label>
             <select name="breed" id="breed">
-              <option value="mix">Mix breed</option>
+              <option value="mix" selected="selected">Mix breed</option>
               <option value="siamese">Siamese Cat</option>
               <option value="maine-coon">Maine Coone cat</option>
               <option value="persian">Persian cat</option>
@@ -112,7 +120,7 @@
             <br />
             <label class="prompt">How old is the animal : </label>
             <select name="age" id="age">
-              <option value="baby">0 to 6 months</option>
+              <option value="baby" selected="selected">0 to 6 months</option>
               <option value="junior">7 months to 2 years</option>
               <option value="adult">3 to 6 years</option>
               <option value="mature">7 to 10 years</option>
@@ -237,5 +245,6 @@
         </footer>
       </a>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

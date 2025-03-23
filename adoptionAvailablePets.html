@@ -7,19 +7,27 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="adoptionHomePage.html">
-          <img
-            class="logo-img"
-            src="logo.png"
-            alt="Adoption Center logo"
-            width="128"
-            height="79"
-          />
-        </a>
-        <h1>Pet Adoption Center</h1>
+      <div class="logo_container">
+        <table class="">
+          <tr>
+            <td>
+              <a href="adoptionHomePage.html">
+                <img
+                  class="logo-img"
+                  src="logo.png"
+                  alt="Adoption Center logo"
+                  width="128"
+                  height="79"
+                />
+              </a>
+            </td>
+            <td><h1>Pet Adoption Center</h1></td>
+          </tr>
+          <tr>
+            <td colspan="2"><h3 id="date"></h3></td>
+          </tr>
+        </table>
       </div>
-
       <!-- The image is taken from the following website : https://pixabay.com/vectors/dog-cat-domestic-animal-silhouette-1532627/ -->
     </header>
     <div class="container">
@@ -53,19 +61,10 @@
             </li>
           </ul>
         </aside>
+
         <section>
           <!-- Browse available pets page -->
-          <h2
-            style="
-              text-align: center;
-              font-size: 50px;
-              line-height: 2;
-              margin: 20px;
-              background-color: lightsteelblue;
-            "
-          >
-            Under Construction
-          </h2>
+          <div id="content_Pets"></div>
         </section>
       </main>
       <a href="adoptionPrivacy.html">
@@ -74,5 +73,9 @@
         </footer>
       </a>
     </div>
+    <script src="script.js"></script>
+    <script>
+      availablePets();
+    </script>
   </body>
 </html>
