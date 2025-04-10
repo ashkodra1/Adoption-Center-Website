@@ -1,8 +1,10 @@
 //imports
 const express = require("express");
 const app = express();
+const fs = require('fs');
 const PORT = 5000; //the server port number
 
+//code inspired by the following tutorial : https://youtu.be/eg244TvZHyU?si=BvT8_NgnPpWJCz4q 
 app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -15,6 +17,18 @@ app.get("/", (req, res) => {
 
 app.get("/createAccount", (req,res)=>{
   res.render("account", {title : "Create an account"});
+});
+
+app.post("/creating", (req,res)=>{
+  var accountInfo = req.body.username + ":"+req.body.password+"\n";
+  fs.appendFile('public/accounts.txt', accountInfo, err => {
+    if (err) {
+      console.error(err);
+    } else {
+      
+      res.render("account", {title : "Create an account"});
+    }
+});
 });
 
 app.get("/browse", (req, res) => {

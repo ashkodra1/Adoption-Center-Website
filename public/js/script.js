@@ -156,13 +156,16 @@ class Pet {
   }
 
   function validation_createAccount(){
+    //regex taken from https://www.reddit.com/r/regex/comments/104ew67/clarification_on_azaz09/
     const regexUsername = /^[A-Za-z0-9]+$/;
+
+    //regex inspired by https://gist.github.com/frizbee/5318c77d2084fa75cd00ea131399581a
     const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
 
-    if (!regexUsername.test(document.forms["accountForm"]["username"])) {
+    if (!regexUsername.test(document.forms["accountForm"]["username"].value)) {
       alert("The username is not the correct format.");
       return false;
-    }elseif (!regexPassword.test(document.forms["accountForm"]["password"])){
+    }else if (!regexPassword.test(document.forms["accountForm"]["password"].value)){
       alert("The password is not the correct format.");
       return false;
     }
