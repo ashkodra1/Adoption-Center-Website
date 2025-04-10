@@ -115,6 +115,12 @@ section {
   margin:10px;
 }
 
+.msg{
+  padding: 5px;
+  color: green;
+  font-weight: bold;
+}
+
 /* For Browse available pets */
 #content_Pets .content_info {
   background-color: lightsteelblue;
@@ -136,7 +142,7 @@ section {
   border-radius: 10px;
 }
 
-/* For find a dog/cat*/
+/* For find a dog/cat or forms in general*/
 form {
   font-family: "Gill Sans", "Gill Sans MT", Calibri;
   line-height: 1.5;
@@ -155,6 +161,11 @@ form select {
   border-radius: 10px;
 }
 form input[type="submit"] {
+  background-color: #363f49;
+  color: #f7f9f8;
+  border-radius: 10px;
+}
+form input[type="reset"] {
   background-color: #363f49;
   color: #f7f9f8;
   border-radius: 10px;

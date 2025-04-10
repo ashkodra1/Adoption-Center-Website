@@ -24,9 +24,13 @@ app.post("/creating", (req,res)=>{
   fs.appendFile('public/accounts.txt', accountInfo, err => {
     if (err) {
       console.error(err);
+      res.render("account",{
+        title : "Create an account",
+        message: "Unable to create account."})
     } else {
-      
-      res.render("account", {title : "Create an account"});
+      res.render("account", {
+        title : "Create an account",
+        message : "Account successfully added!"});
     }
 });
 });
