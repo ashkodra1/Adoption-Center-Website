@@ -110,6 +110,11 @@ section {
   background-color: #f7f9f8;
 }
 
+/* For create an account*/
+#username, #password{
+  margin:10px;
+}
+
 /* For Browse available pets */
 #content_Pets .content_info {
   background-color: lightsteelblue;
@@ -137,6 +142,10 @@ form {
   line-height: 1.5;
 }
 form input[type="radio"] {
+  accent-color: #363f49;
+  cursor: pointer;
+}
+form input[type="checkbox"] {
   accent-color: #363f49;
   cursor: pointer;
 }

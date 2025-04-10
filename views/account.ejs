@@ -1,0 +1,24 @@
+<%-include('partials/header') %>
+<%-include('partials/sideMenu') %>
+<section>
+    <script src="/js/script.js"></script>
+    <h2>Create an account</h2>
+    <ul>
+        <li>Your username can contain letters (both upper and lower
+        case) and digits only.</li>
+        <li>Your password must be at least 4 characters long
+        (characters are to be letters and digits only), have at least one letter
+        and at least one digit.</li>
+    </ul>
+    <form name="accountForm" onsubmit="return validation_createAccount()" method="get">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="Submit" />
+      <input type="submit" value="Clear" />
+    </form>
+</section>
+<%-include('partials/footer') %>

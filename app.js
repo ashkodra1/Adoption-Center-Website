@@ -13,7 +13,20 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
 });
 
+app.get("/createAccount", (req,res)=>{
+  res.render("account", {title : "Create an account"});
+});
+
 app.get("/browse", (req, res) => {
+  /*const animal = req.query.animal;
+  const breed = req.query.breed;
+  const age = req.query.age;
+  const gender = req.query.gender;
+  const alongDog = req.query.along;
+  
+  console.log(alongDog);*/
+
+
   res.render("browse", { title: "Browse Pets" });
 });
 

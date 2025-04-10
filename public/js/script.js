@@ -120,12 +120,12 @@ class Pet {
   
   //Validation for the find a dog/cat page
   function validation_findPet() {
-    if (
+
+    if ( //if theres an empty field
       document.forms["findPetForm"]["animal"].value == "" ||
       document.forms["findPetForm"]["breed"].value == "" ||
       document.forms["findPetForm"]["age"].value == "" ||
-      document.forms["findPetForm"]["gender"].value == "" ||
-      document.forms["findPetForm"]["along"].value == ""
+      document.forms["findPetForm"]["gender"].value == ""
     ) {
       alert("Please fill out all of the form");
       return false;
@@ -134,7 +134,7 @@ class Pet {
   
   //Validation of the give away a pet form
   function validation_GiveawayPet() {
-    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (
       document.forms["giveawayPet"]["animal"].value == "" ||
       document.forms["giveawayPet"]["breed"].value == "" ||
@@ -151,6 +151,19 @@ class Pet {
       return false;
     } else if (!regex.test(document.forms["giveawayPet"]["email"].value)) {
       alert("The email is not the correct format.");
+      return false;
+    }
+  }
+
+  function validation_createAccount(){
+    const regexUsername = /^[A-Za-z0-9]+$/;
+    const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
+
+    if (!regexUsername.test(document.forms["accountForm"]["username"])) {
+      alert("The username is not the correct format.");
+      return false;
+    }elseif (!regexPassword.test(document.forms["accountForm"]["password"])){
+      alert("The password is not the correct format.");
       return false;
     }
   }
