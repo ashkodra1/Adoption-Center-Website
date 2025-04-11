@@ -1,0 +1,3 @@
+1:user1:cat:siamese:junior:male:no:yes:yes:He's very cute:Allison Shkodra:email@mail.com
+2:user2:dog:golden:senior:male:yes:yes:yes:Has arthritis:Bob Smith:BSmith@mail.com
+3:user3:dog:bulldog:junior:female:yes:no:no:Loves to play catch:Jane Doe:JDoe@mail.com

@@ -56,13 +56,19 @@ app.post("/creating", (req, res) => {
 });
 
 app.get("/browse", (req, res) => {
-  /*const animal = req.query.animal;
+  const animal = req.query.animal;
   const breed = req.query.breed;
   const age = req.query.age;
   const gender = req.query.gender;
-  const alongDog = req.query.along;
-  
-  console.log(alongDog);*/
+
+  // Trying to keep the result of the check boxes
+  // If nothing is checked then the array will be empty
+  const along = req.query.along || [];
+
+  //stores yes or no according to if the box was checked or not
+  const alongDog = along.includes("dog") ? "yes" : "no";
+  const alongCat = along.includes("cat") ? "yes" : "no";
+  const alongChildren = along.includes("children") ? "yes" : "no";
 
   res.render("browse", { title: "Browse Pets" });
 });

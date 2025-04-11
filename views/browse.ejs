@@ -1,11 +1,56 @@
-<%-include('partials/header') %>
-<%-include('partials/sideMenu') %>
+<%-include('partials /header') %> <%-include('partials /sideMenu') %>
 <section>
-    <!-- Browse available pets page -->
-    <div id="content_Pets"></div>
-    <script src="/js/script.js"></script>
-    <script>
-        availablePets();
-    </script>
+  <!-- Browse available pets page -->
+  <div id="content_Pets"></div>
+  <script src="/js/script.js"></script>
+  <% for (let i = 0; i < arrPets.length; i++) { %>
+  <div  class = 'content_info'>
+    <table>
+        <caption>
+            <%= arrPets[i] %>
+        </caption>
+        <tr>
+            <td>
+                <ul>
+                    <li>
+                        <%= arrPets[i].breed %>
+                    </li>
+                    <li>
+                        <%= arrPets[i].gender %>
+                    </li>
+                    <li>
+                        <%= arrPets[i].age %> old
+                    </li>
+                    <li>
+                        <% if(arrPets[i].alongDog == "yes"){ "Gets along with dogs"}else{"Doesn't get along with dogs"}%>
+                    </li>
+                    <li>
+                        <% if(arrPets[i].alongCat == "yes"){ "Gets along with cats"}else{"Doesn't get along with cats"}%>
+                    </li>
+                    <li>
+                        <% if(arrPets[i].alongChildren == "yes"){ "Suitable for families with small children"}else{"Not suitable for families with small children"}%>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        Additional info: <% arrPets[i].comments %>
+                    </li>
+                    <li>
+                        Current owner: <% arrPets[i].ownerName %>
+                    </li>
+                    <li>
+                        Contact: <% arrPets[i].ownerEmail %>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <div class = "content_input">
+        <input type="button" value="Interested"></input>
+    </div>
+</div>';
+<% } %>
 </section>
-<%-include('partials/footer') %>
+<%-include('partials /footer') %>
