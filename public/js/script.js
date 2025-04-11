@@ -170,4 +170,3 @@ class Pet {
       return false;
     }
   }
-  

@@ -21,18 +21,26 @@ app.get("/createAccount", (req,res)=>{
 
 app.post("/creating", (req,res)=>{
   var accountInfo = req.body.username + ":"+req.body.password+"\n";
-  fs.appendFile('public/accounts.txt', accountInfo, err => {
-    if (err) {
-      console.error(err);
-      res.render("account",{
-        title : "Create an account",
-        message: "Unable to create account."})
-    } else {
-      res.render("account", {
-        title : "Create an account",
-        message : "Account successfully added!"});
-    }
-});
+
+
+  if(userExists(req.body.username) == false){
+    fs.appendFile('public/accounts.txt', accountInfo, err => {
+      if (err) {
+        console.error(err);
+        res.render("account",{
+          title : "Create an account",
+          message: "Unable to create account."})
+      } else {
+        res.render("account", {
+          title : "Create an account",
+          message : "Account successfully added!"});
+      }
+    });
+  }else{
+    res.render("account",{
+      title : "Create an account",
+      message: "This user already exists! Try another username."});
+  }
 });
 
 app.get("/browse", (req, res) => {
@@ -75,3 +83,21 @@ app.get("/privacy", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+function userExists(username){
+  //This does the following:
+  // 1. Read the content of the file
+  // 2. Split it into an array (each element of the array is a line)
+  // 3. Check each line to see if the username already exist
+  //      - If the username exists => return true
+  //      - If the username does not exist => return false
+  const file_content = fs.readFileSync("public/accounts.txt","utf-8");
+  const lines = file_content.split("\n")
+  for (let i = 0 ; i<lines.length; i++){
+    if(lines[i].split(":")[0] === username){
+      return true;
+    }
+  }
+  return false;
+}
