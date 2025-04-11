@@ -1,7 +1,7 @@
 <%-include('partials/header') %> <%-include('partials/sideMenu') %>
 <section>
   <script src="/js/script.js"></script>
-  <h2>Create an account</h2>
+  <h2>Log in</h2>
   <ul>
     <li>
       Your username can contain letters (both upper and lower case) and digits
@@ -14,9 +14,9 @@
   </ul>
   <form
     name="accountForm"
-    onsubmit="return validation_createAccount()"
+    onsubmit="return validation_account()"
     method="post"
-    action="/creating"
+    action="/logginIn"
   >
     <label for="username">Username: </label>
     <input type="text" name="username" id="username" />

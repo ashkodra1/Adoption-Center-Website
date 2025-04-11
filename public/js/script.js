@@ -155,7 +155,7 @@ class Pet {
     }
   }
 
-  function validation_createAccount(){
+  function validation_account(){
     //regex taken from https://www.reddit.com/r/regex/comments/104ew67/clarification_on_azaz09/
     const regexUsername = /^[A-Za-z0-9]+$/;
 
