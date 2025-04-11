@@ -93,12 +93,12 @@ aside li:hover a {
   padding: 20px 0px;
 }
 
-.active{ 
+.active {
   /*for the active page*/
   background-color: lightslategray;
 }
 
-.active a{
+.active a {
   /*for the active page*/
   color: #f7f9f8;
 }
@@ -111,11 +111,12 @@ section {
 }
 
 /* For create an account*/
-#username, #password{
-  margin:10px;
+#username,
+#password {
+  margin: 10px;
 }
 
-.msg{
+.msg {
   padding: 5px;
   color: green;
   font-weight: bold;
@@ -177,11 +178,19 @@ form input[type="reset"] {
 }
 
 /* For dog care and cat care */
-.info{
+.info {
   text-align: justify;
   font-size: 18px;
   line-height: 2;
   padding: 20px;
+}
+
+#user {
+  padding: 15px;
+  border-radius: 50px;
+  background-color: #363f49;
+  color: #f7f9f8;
+  width: fit-content;
 }
 
 /* For the footer */

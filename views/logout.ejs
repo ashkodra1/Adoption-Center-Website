@@ -1,0 +1,7 @@
+<%-include('partials/header') %> <%-include('partials/sideMenu') %>
+<section>
+  <% if(typeof message !== 'undefined') {%>
+  <p class="msg"><%= message%></p>
+  <% }%>
+</section>
+<%-include('partials/footer') %>

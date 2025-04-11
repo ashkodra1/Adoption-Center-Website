@@ -79,12 +79,18 @@ app.get("/catCare", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", { title: "Login" });
+  if (!req.session.user) {
+    res.render("login", { title: "Login" });
+  } else {
+    res.redirect("/giveaway");
+  }
 });
 
 app.post("/logginIn", (req, res) => {
   if (verifyLogin(req.body.username, req.body.password)) {
-    req.session.username = req.body.username;
+    req.session.user = {
+      username: req.body.username,
+    };
     res.redirect("/giveaway");
   } else {
     res.render("login", {
@@ -95,7 +101,33 @@ app.post("/logginIn", (req, res) => {
 });
 
 app.get("/giveaway", (req, res) => {
-  res.render("giveaway", { title: "Give away a pet" });
+  if (!req.session.user) {
+    res.render("login", {
+      title: "Login",
+      message: "Access denied! Please log in.",
+    });
+  } else {
+    res.render("giveaway", {
+      title: "Give away a pet",
+      user: req.session.user.username,
+    });
+  }
+});
+
+app.get("/logOut", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.render("logout", {
+        title: "LogOut",
+        message: "Unable to logOut",
+      });
+    } else {
+      res.render("logout", {
+        title: "LogOut",
+        message: "LogOut successful.",
+      });
+    }
+  });
 });
 
 app.get("/contact", (req, res) => {
