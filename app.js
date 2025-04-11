@@ -21,6 +21,27 @@ app.use(
   })
 ); //session
 
+// Pets display
+class Pet {
+  //class with all of the information about pet
+  constructor(user, animal, breed, age, gender, alongDog, alongCat, alongChildren, comments, ownerName, ownerEmail) {
+    this.user = user;
+    this.animal = animal;
+    this.breed = breed;
+    this.age = age;
+    this.gender = gender;
+    this.alongDog = alongDog;
+    this.alongCat = alongCat;
+    this.alongChildren = alongChildren;
+    this.comments = comments;
+    this.ownerName = ownerName;
+    this.ownerEmail = ownerEmail;
+  }
+}
+
+//The array containing all of the pets (I added two to test the code)
+let arrPets = [];
+
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
 });
@@ -56,21 +77,58 @@ app.post("/creating", (req, res) => {
 });
 
 app.get("/browse", (req, res) => {
+  //empty the array of pets once the page loads
+  arrPets = [];
+
+  //get info from form
   const animal = req.query.animal;
   const breed = req.query.breed;
   const age = req.query.age;
   const gender = req.query.gender;
-
   // Trying to keep the result of the check boxes
   // If nothing is checked then the array will be empty
   const along = req.query.along || [];
-
   //stores yes or no according to if the box was checked or not
   const alongDog = along.includes("dog") ? "yes" : "no";
   const alongCat = along.includes("cat") ? "yes" : "no";
   const alongChildren = along.includes("children") ? "yes" : "no";
 
-  res.render("browse", { title: "Browse Pets" });
+  /* Check the file */
+  const file_content = fs.readFileSync("public/availablePetInfo.txt", "utf-8");
+  const lines = file_content.split("\n");
+  for (let i = 0; i < lines.length - 1; i++) {
+    var elements = lines[i].split(":");
+    console.log(elements[3]);
+    console.log(breed);
+    console.log(breed == "no preference" || elements[3] === breed);
+    console.log(breed == "no preference");
+    if (
+      elements[2] === animal &&
+      (breed === "no preference" || elements[3] === breed) &&
+      (age === "no preference" || elements[4] === age) &&
+      (gender === "no preference" || elements[5] === gender) &&
+      ((alongDog === "yes" && elements[6] === alongDog) || alongDog === "no") &&
+      ((alongCat === "yes" && elements[7] === alongCat) || alongCat === "no") &&
+      ((alongChildren === "yes" && elements[8] === alongChildren) || alongChildren === "no")
+    ) {
+      arrPets.push(
+        new Pet(
+          elements[1],
+          elements[2],
+          elements[3],
+          elements[4],
+          elements[5],
+          elements[6],
+          elements[7],
+          elements[8],
+          elements[9],
+          elements[10],
+          elements[11]
+        )
+      );
+    }
+  }
+  res.render("browse", { title: "Browse Pets", pets: arrPets });
 });
 
 app.get("/find", (req, res) => {
@@ -93,7 +151,7 @@ app.get("/login", (req, res) => {
   }
 });
 
-app.post("/logginIn", (req, res) => {
+app.post("/loggingIn", (req, res) => {
   if (verifyLogin(req.body.username, req.body.password)) {
     req.session.user = {
       username: req.body.username,

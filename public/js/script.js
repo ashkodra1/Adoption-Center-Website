@@ -1,36 +1,3 @@
-//---- For 2) [Browse available pets display]
-class Pet {
-  //class with all of the information about pet
-  constructor(
-    user,
-    animal,
-    breed,
-    age,
-    gender,
-    alongDog,
-    alongCat,
-    alongChildren,
-    comments,
-    ownerName,
-    ownerEmail
-  ) {
-    this.user = user;
-    this.animal = animal;
-    this.breed = breed;
-    this.age = age;
-    this.gender = gender;
-    this.alongDog = alongDog;
-    this.alongCat = alongCat;
-    this.alongChildren = alongChildren;
-    this.comments = comments;
-    this.ownerName = ownerName;
-    this.ownerEmail = ownerEmail;
-  }
-}
-
-//The array containing all of the pets (I added two to test the code)
-let arrPets = [];
-
 function availablePets(arrPets) {
   for (var i = 0; i < arrPets.length; i++) {}
 }

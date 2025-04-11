@@ -1,3 +1,4 @@
-1:user1:cat:siamese:junior:male:no:yes:yes:He's very cute:Allison Shkodra:email@mail.com
-2:user2:dog:golden:senior:male:yes:yes:yes:Has arthritis:Bob Smith:BSmith@mail.com
-3:user3:dog:bulldog:junior:female:yes:no:no:Loves to play catch:Jane Doe:JDoe@mail.com
+1:user1:cat:siamese:7 months to 2 years:male:no:no:yes:Cute:Allison Shkodra:email@mail.com
+2:user2:dog:golden:0 to 6 months:female:yes:yes:yes:Little baby:Bob Smith:BSmith@mail.com
+3:user3:cat:siamese:3 to 6 years:female:yes:yes:yes:Very cute:Jane Doe:JDoe@mail.com
+4:user3:dog:bulldog:11 to 14 years:female:no:no:no:Has arthritis:John Doe:JDoe@mail.com

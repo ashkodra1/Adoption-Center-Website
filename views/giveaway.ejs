@@ -4,11 +4,7 @@
   <h1 id="user">Hello <%= user %>!</h1>
   <h2>Please fill out the following form</h2>
 
-  <form
-    name="giveawayPet"
-    onsubmit="return validation_GiveawayPet()"
-    method="post"
-  >
+  <form name="giveawayPet" onsubmit="return validation_GiveawayPet()" method="post">
     <label class="prompt"> What animal would you like to give away : </label>
     <label for="cat">
       <input type="radio" name="animal" id="cat" value="cat" />
@@ -37,12 +33,12 @@
     <br />
     <label class="prompt">How old is the animal : </label>
     <select name="age" id="age">
-      <option value="baby" selected="selected">0 to 6 months</option>
-      <option value="junior">7 months to 2 years</option>
-      <option value="adult">3 to 6 years</option>
-      <option value="mature">7 to 10 years</option>
-      <option value="senior">11 to 14 years</option>
-      <option value="geriatric">15 years and older</option>
+      <option value="0 to 6 months" selected="selected">0 to 6 months</option>
+      <option value="7 months to 2 years">7 months to 2 years</option>
+      <option value="3 to 6 years">3 to 6 years</option>
+      <option value="7 to 10 years">7 to 10 years</option>
+      <option value="11 to 14 years">11 to 14 years</option>
+      <option value="15 years and older">15 years and older</option>
     </select>
     <br />
     <br />
@@ -79,40 +75,21 @@
     </label>
     <br />
     <br />
-    <label class="prompt">
-      Is the animal suitable for a family with small children :
-    </label>
+    <label class="prompt"> Is the animal suitable for a family with small children : </label>
     <label for="along-children-yes">
-      <input
-        type="radio"
-        name="along_children"
-        id="along-children-yes"
-        value="yes"
-      />
+      <input type="radio" name="along_children" id="along-children-yes" value="yes" />
       Yes
     </label>
     <label for="along-children-no">
-      <input
-        type="radio"
-        name="along_children"
-        id="along-children-no"
-        value="no"
-      />
+      <input type="radio" name="along_children" id="along-children-no" value="no" />
       No
     </label>
     <br />
     <br />
-    <label class="prompt">
-      Anything else we should know about the animal :
-    </label>
+    <label class="prompt"> Anything else we should know about the animal : </label>
     <br />
     <label for="comments-area">
-      <textarea
-        name="comments_area"
-        id="comments-area"
-        rows="4"
-        cols="50"
-      ></textarea>
+      <textarea name="comments_area" id="comments-area" rows="4" cols="50"></textarea>
     </label>
     <br />
     <label class="prompt">The current owner's full name :</label>
@@ -126,6 +103,7 @@
       <input type="email" name="email" id="email" />
     </label>
     <br />
+
     <br />
     <input type="submit" value="Submit" />
     <input type="reset" value="Clear" />
