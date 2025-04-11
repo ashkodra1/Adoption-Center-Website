@@ -4,7 +4,11 @@
   <h1 id="user">Hello <%= user %>!</h1>
   <h2>Please fill out the following form</h2>
 
-  <form name="giveawayPet" onsubmit="return validation_GiveawayPet()">
+  <form
+    name="giveawayPet"
+    onsubmit="return validation_GiveawayPet()"
+    method="post"
+  >
     <label class="prompt"> What animal would you like to give away : </label>
     <label for="cat">
       <input type="radio" name="animal" id="cat" value="cat" />
@@ -55,22 +59,22 @@
     <br />
     <label class="prompt"> Does the animal get along with other dogs : </label>
     <label for="along-dog-yes">
-      <input type="radio" name="along-dog" id="along-dog-yes" value="yes" />
+      <input type="radio" name="along_dog" id="along-dog-yes" value="yes" />
       Yes
     </label>
     <label for="along-dog-no">
-      <input type="radio" name="along-dog" id="along-dog-no" value="no" />
+      <input type="radio" name="along_dog" id="along-dog-no" value="no" />
       No
     </label>
     <br />
     <br />
     <label class="prompt"> Does the animal get along with other cats : </label>
     <label for="along-cat-yes">
-      <input type="radio" name="along-cat" id="along-cat-yes" value="yes" />
+      <input type="radio" name="along_cat" id="along-cat-yes" value="yes" />
       Yes
     </label>
     <label for="along-cat-no">
-      <input type="radio" name="along-cat" id="along-cat-no" value="no" />
+      <input type="radio" name="along_cat" id="along-cat-no" value="no" />
       No
     </label>
     <br />
@@ -81,7 +85,7 @@
     <label for="along-children-yes">
       <input
         type="radio"
-        name="along-children"
+        name="along_children"
         id="along-children-yes"
         value="yes"
       />
@@ -90,7 +94,7 @@
     <label for="along-children-no">
       <input
         type="radio"
-        name="along-children"
+        name="along_children"
         id="along-children-no"
         value="no"
       />
@@ -104,7 +108,7 @@
     <br />
     <label for="comments-area">
       <textarea
-        name="comments-area"
+        name="comments_area"
         id="comments-area"
         rows="4"
         cols="50"
@@ -119,12 +123,15 @@
     <br />
     <label class="prompt">The current owner's email :</label>
     <label for="email">
-      <input type="email" id="email" />
+      <input type="email" name="email" id="email" />
     </label>
     <br />
     <br />
     <input type="submit" value="Submit" />
     <input type="reset" value="Clear" />
   </form>
+  <% if(typeof message !== 'undefined') {%>
+  <p class="msg"><%= message%></p>
+  <% }%>
 </section>
 <%-include('partials/footer') %>

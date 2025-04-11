@@ -5,6 +5,7 @@ const fs = require("fs");
 const session = require("express-session");
 
 const PORT = 5000; //the server port number
+let petId = 1; //for the available pet info file
 
 //code inspired by the following tutorial : https://youtu.be/eg244TvZHyU?si=BvT8_NgnPpWJCz4q
 app.set("views", "views");
@@ -32,7 +33,7 @@ app.post("/creating", (req, res) => {
   var accountInfo = req.body.username + ":" + req.body.password + "\n";
 
   if (userExists(req.body.username) == false) {
-    fs.appendFile("public/accounts.txt", accountInfo, (err) => {
+    fs.appendFile("public/login.txt", accountInfo, (err) => {
       if (err) {
         console.error(err);
         res.render("account", {
@@ -114,6 +115,52 @@ app.get("/giveaway", (req, res) => {
   }
 });
 
+app.post("/giveaway", (req, res) => {
+  var petInfo =
+    petId +
+    ":" +
+    req.session.user.username +
+    ":" +
+    req.body.animal +
+    ":" +
+    req.body.breed +
+    ":" +
+    req.body.age +
+    ":" +
+    req.body.gender +
+    ":" +
+    req.body.along_dog +
+    ":" +
+    req.body.along_cat +
+    ":" +
+    req.body.along_children +
+    ":" +
+    req.body.comments_area +
+    ":" +
+    req.body.name +
+    ":" +
+    req.body.email +
+    "\n";
+
+  fs.appendFile("public/availablePetInfo.txt", petInfo, (err) => {
+    if (err) {
+      console.error(err);
+      res.render("giveaway", {
+        title: "Give away",
+        user: req.session.user.username,
+        message: "Unable to upload your pet, try again later.",
+      });
+    } else {
+      petId++;
+      res.render("giveaway", {
+        title: "Give away",
+        user: req.session.user.username,
+        message: "Pet successfully uploaded.",
+      });
+    }
+  });
+});
+
 app.get("/logOut", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -150,7 +197,7 @@ function userExists(username) {
   // 3. Check each line to see if the username already exist
   //      - If the username exists => return true
   //      - If the username does not exist => return false
-  const file_content = fs.readFileSync("public/accounts.txt", "utf-8");
+  const file_content = fs.readFileSync("public/login.txt", "utf-8");
   const lines = file_content.split("\n");
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].split(":")[0] === username) {
@@ -167,7 +214,7 @@ function verifyLogin(username, password) {
   // 3. Check each line to see if the username and password already exist
   //      - If they exists => return true
   //      - If they does not exist => return false
-  const file_content = fs.readFileSync("public/accounts.txt", "utf-8");
+  const file_content = fs.readFileSync("public/login.txt", "utf-8");
   const lines = file_content.split("\n");
   for (let i = 0; i < lines.length; i++) {
     var elements = lines[i].split(":");

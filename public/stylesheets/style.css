@@ -187,6 +187,7 @@ form input[type="reset"] {
 
 #user {
   padding: 15px;
+  margin-top: 0px;
   border-radius: 50px;
   background-color: #363f49;
   color: #f7f9f8;
