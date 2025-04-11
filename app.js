@@ -24,7 +24,7 @@ app.use(
 // Pets display
 class Pet {
   //class with all of the information about pet
-  constructor(user, animal, breed, age, gender, alongDog, alongCat, alongChildren, comments, ownerName, ownerEmail) {
+  constructor(user, animal, breed, age, gender, alongDog, alongCat, alongChildren, comments, ownerName, ownerEmail, image) {
     this.user = user;
     this.animal = animal;
     this.breed = breed;
@@ -36,6 +36,7 @@ class Pet {
     this.comments = comments;
     this.ownerName = ownerName;
     this.ownerEmail = ownerEmail;
+    this.image = image;
   }
 }
 
@@ -97,11 +98,7 @@ app.get("/browse", (req, res) => {
   const file_content = fs.readFileSync("public/availablePetInfo.txt", "utf-8");
   const lines = file_content.split("\n");
   for (let i = 0; i < lines.length - 1; i++) {
-    var elements = lines[i].split(":");
-    console.log(elements[3]);
-    console.log(breed);
-    console.log(breed == "no preference" || elements[3] === breed);
-    console.log(breed == "no preference");
+    var elements = lines[i].split("|");
     if (
       elements[2] === animal &&
       (breed === "no preference" || elements[3] === breed) &&
@@ -123,7 +120,8 @@ app.get("/browse", (req, res) => {
           elements[8],
           elements[9],
           elements[10],
-          elements[11]
+          elements[11],
+          elements[12]
         )
       );
     }
@@ -182,28 +180,30 @@ app.get("/giveaway", (req, res) => {
 app.post("/giveaway", (req, res) => {
   var petInfo =
     petId +
-    ":" +
+    "|" +
     req.session.user.username +
-    ":" +
+    "|" +
     req.body.animal +
-    ":" +
+    "|" +
     req.body.breed +
-    ":" +
+    "|" +
     req.body.age +
-    ":" +
+    "|" +
     req.body.gender +
-    ":" +
+    "|" +
     req.body.along_dog +
-    ":" +
+    "|" +
     req.body.along_cat +
-    ":" +
+    "|" +
     req.body.along_children +
-    ":" +
+    "|" +
     req.body.comments_area +
-    ":" +
+    "|" +
     req.body.name +
-    ":" +
+    "|" +
     req.body.email +
+    "|" +
+    req.body.image +
     "\n";
 
   fs.appendFile("public/availablePetInfo.txt", petInfo, (err) => {
@@ -264,7 +264,7 @@ function userExists(username) {
   const file_content = fs.readFileSync("public/login.txt", "utf-8");
   const lines = file_content.split("\n");
   for (let i = 0; i < lines.length; i++) {
-    if (lines[i].split(":")[0] === username) {
+    if (lines[i].split("|")[0] === username) {
       return true;
     }
   }
@@ -281,7 +281,7 @@ function verifyLogin(username, password) {
   const file_content = fs.readFileSync("public/login.txt", "utf-8");
   const lines = file_content.split("\n");
   for (let i = 0; i < lines.length; i++) {
-    var elements = lines[i].split(":");
+    var elements = lines[i].split("|");
     if (elements[0] === username && elements[1] === password) {
       return true;
     }

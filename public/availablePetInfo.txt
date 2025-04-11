@@ -1,4 +1,4 @@
-1:user1:cat:siamese:7 months to 2 years:male:no:no:yes:Cute:Allison Shkodra:email@mail.com
-2:user2:dog:golden:0 to 6 months:female:yes:yes:yes:Little baby:Bob Smith:BSmith@mail.com
-3:user3:cat:siamese:3 to 6 years:female:yes:yes:yes:Very cute:Jane Doe:JDoe@mail.com
-4:user3:dog:bulldog:11 to 14 years:female:no:no:no:Has arthritis:John Doe:JDoe@mail.com
+1|user1|cat|siamese|7 months to 2 years|male|no|no|yes|Cute|Allison Shkodra|email@mail.com|https://assets.elanco.com/8e0bf1c2-1ae4-001f-9257-f2be3c683fb1/fca42f04-2474-4302-a238-990c8aebfe8c/Siamese_cat_1110x740.jpg?w=3840&q=75&auto=format
+2|user2|dog|golden|0 to 6 months|female|yes|yes|yes|Little baby|Bob Smith|BSmith@mail.com|https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors.jpg
+3|user3|cat|siamese|3 to 6 years|female|yes|yes|yes|Very cute|Jane Doe|JDoe@mail.com|https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/June/06-23/Siamese+Cat+Facts+_+Siamese+cat+lying+on+an+ottoman+-min.jpg
+4|user3|dog|bulldog|11 to 14 years|female|no|no|no|Has arthritis|John Doe|JDoe@mail.com|https://upload.wikimedia.org/wikipedia/commons/1/17/UKC_Olde_English_Bulldogge_Male.jpg
