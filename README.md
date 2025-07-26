@@ -16,4 +16,4 @@ Pour accéder le site web :
   - https://adoption-center-website.onrender.com (peut prendre du temps à charger)
 
   OU
-  - Clone repositoire, écrire "npm start" dans le terminal et ouvrir "localhost:5000" dans votre navigateur Internet
+  - Clone dépôt, écrire "npm start" dans le terminal et ouvrir "localhost:5000" dans votre navigateur Internet
