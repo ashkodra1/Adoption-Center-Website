@@ -4,7 +4,8 @@ This website was carried out as part of the Web Programming course [SOEN287] at 
 
 To access the website : 
   - https://adoption-center-website.onrender.com (may take time to load)
-    OR
+
+  OR
   - Clone repository, write "npm start" in the terminal and open "localhost:5000" in your web browser
 
 
@@ -13,5 +14,6 @@ Ce site web a été réalisé dans le cadre du cours de Programmation Web [SOEN2
 
 Pour accéder le site web : 
   - https://adoption-center-website.onrender.com (peut prendre du temps à charger)
-    OU
+
+  OU
   - Clone repositoire, écrire "npm start" dans le terminal et ouvrir "localhost:5000" dans votre navigateur Internet
