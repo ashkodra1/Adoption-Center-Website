@@ -1,5 +1,5 @@
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri;
+  font-family: "Courier New", Helvetica, sans-serif;
   margin: 0;
 
   background-color: rgb(70, 70, 70);
@@ -145,7 +145,7 @@ section {
 
 /* For find a dog/cat or forms in general*/
 form {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri;
+  font-family: "Courier New", Helvetica, sans-serif;
   line-height: 1.5;
 }
 form input[type="radio"] {
